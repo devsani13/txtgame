@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div class="areacen">
+        <div class="ahr">
+            <hr>
+        </div>
+        <div class="dform">
+            <form action="verificalogin.php" method="POST">
+                <div class="form-grid">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" name="usuario" required style="grid-column: span 2;">
+
+                    <label for="senha">Senha:</label>
+                    <input type="password" name="senha" id="senha" required>
+                    <button type="button" onclick="toggleSenha('senha')">👁</button>
+
+                    <input type="submit" value="Entrar" class="submit-btn">
+                    
+                    <button onclick="window.location.href='registrar.html'" class="registrar">Registrar-se</button>
+                </div>
+            </form>
+        </div>
+        <div class="ahr">
+            <hr>
+        </div>
+    </div>
+</body>
+
+<style>
+    body {
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-image: url('Iniciar.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .areacen {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #262626;
+        width: 400px;
+        height: 500px;
+        padding: 20px;
+        border-radius: 30px;
+    }
+
+    .ahr {
+        display: grid;
+        height: 20%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    hr {
+        width: 370px;
+        height: 5px;
+        border: 0px;
+        border-radius: 10px;
+        background-color: white;
+    }
+
+    .dform {
+        display: flex;
+        height: 60%;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        color: white;
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 15px;
+    }
+
+    .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr 0.5fr;
+        gap: 15px;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    input {
+        width: 100%;
+        padding: 5px;
+        border: none;
+        border-radius: 5px;
+    }
+
+    button {
+        cursor: pointer;
+        border: none;
+        background-color: #4e4e4e;
+        color: white;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    button:hover {
+        background-color: #777777;
+        color: rgb(218, 218, 218);
+    }
+
+    .submit-btn {
+        grid-column: span 3;
+        width: 100%;
+        padding: 10px;
+        background-image: url('color.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        color: rgb(24, 24, 24);
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .submit-btn:hover {
+        background-image: url('color2.jpg');
+        color: black;
+    }
+
+    .registrar {
+        grid-column: span 3;
+        width: 100%;
+        padding: 10px;
+        background-color: #4e4e4e;
+        color: white;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bolder;
+        cursor: pointer;
+    }
+
+    .registrar:hover {
+        background-color: #777777;
+        color: rgb(218, 218, 218);
+    }
+</style>
+
+<script>
+    function toggleSenha(id) {
+        let input = document.getElementById(id);
+        input.type = input.type === "password" ? "text" : "password";
+    }
+</script>
+
+</html>
